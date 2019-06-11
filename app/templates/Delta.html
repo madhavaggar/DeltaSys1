@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> PROCESS-{{ nodename }}</title>
+    </head>
+    <body>
+        <h1 style="text-align: center;">processes running in {{ nodename }}</h1>
+        <table>
+            {% if data %}
+          <tr>
+            <th>id of the process</th>
+            <th> start time</th>
+            <th>time to complete</th>
+          </tr> 
+            {% for d in data %}
+            <tr>         
+              <td>{{ d[0] }}</td>
+              <td>{{ d[1] }}</td>
+              <td>{{ d[2] }}</td> 
+            </tr>
+            {% endfor %}
+
+            {% else %}
+            <h2>no process running</h2>
+            {% endif %}
+        </table>
+        {% if history %}
+        <h4> HISTORY </h4>
+        <table style="border:1px solid black ;">
+            
+          <tr>
+            <th>id number</th>
+            <th>start time</th>
+            <th>time to complete</th>
+          </tr> 
+          {% for h in history %}
+          <tr>
+             <td>{{ h[0] }}</td>
+             <td>{{ h[1] }}</td>
+             <td>{{ h[2] }}</td>
+          </tr>
+            {% endfor %}
+        </table>
+        {% endif %}
+
+    </body>
+</html>
