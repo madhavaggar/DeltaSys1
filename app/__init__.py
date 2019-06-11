@@ -39,7 +39,7 @@ def index():
             conn.commit()
             return "succesfully added to  " + d[0]  #returning success message
     
-    return "CAN'T HANDLE request REJECTED!!"
+    return "Can't handle requests!"
 
 
 @app.route('/<nodename>')   #webpages for four nodes
@@ -77,7 +77,7 @@ def process(nodename):
     cur.execute("SELECT Id,Starttime,completion_time FROM requests WHERE allocated_node_name='"+nodename+"'")
     data=cur.fetchall()
     if data is None:
-        return "no process is currently running"
+        return "No process currently running"
     else:
         for d in data:
             a=compare(str(d[1]),str(d[2]),t)
