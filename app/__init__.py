@@ -85,7 +85,7 @@ def process(nodename):
                 history.append(d)
             else:
                 datanow.append(d)
-        return render_template("process.html",nodename=nodename,data=datanow,history=history)
+        return render_template("delta.html",nodename=nodename,data=datanow,history=history)
 
     
 if __name__=="__main__":
