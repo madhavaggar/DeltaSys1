@@ -1,0 +1,35 @@
+Firstly we need to create a directory preferably in your home directory
+mkdir /home/<Directory Name>
+
+Next access that directory
+cd /home/<Directory Name>
+
+Now install python3 in this directory
+
+Next install virtual environment creator
+pip install virtualenv
+
+Python supports virtual environment, so use this command
+python3 -m venv venv
+ 
+Now use the following command to create a virtual environemnt 
+virtualenv venv
+
+Next to activate your virtual environment use 
+source venv/bin/activate
+
+Now that youre logged into th virtual environment, we can install flask
+pip install flask
+
+Next create a file inside your directory for the main code
+touch code.py
+
+After coding you can use 
+export FLASK_APP=code.py
+flask run 
+
+To view whether your server request worked view it on 
+localhost:5000
+
+For making your templates make a folder in your directory with the title templates and let all .html files go there.
+mkdir /<directory name>/templates
